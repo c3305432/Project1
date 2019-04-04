@@ -21,16 +21,17 @@ int main(){
     
     
     
-    for (index = 0; index <= 26; index++){
+    for (index = 0; index < 26 - key; index++){
         k = index;
         array2[k] = array[index] + key;
-        if ((array2[k]) > 90 ){
-            for (k = 25; k >= 25 - key; k--){
-            index = k;
-            array2[k] = (155) - array[index];
-            }
-        }
+        
         printf("%c", array2[k]);
-    }
+        }   
+    for (index = 25; index >= 26 - key; index--){
+        k = index;
+        array2[k] = 155 - array[index];
+        
+        printf("%c", array2[k]);
+        }   
     return 0;
 }
