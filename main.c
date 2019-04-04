@@ -14,7 +14,7 @@ int main(){
    
    char array[]= {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
    char array2[26];
-   int key = 2;
+   int key = 4;
    int index;
    int k;
    
@@ -24,12 +24,13 @@ int main(){
     for (index = 0; index <= 26; index++){
         k = index;
         array2[k] = array[index] + key;
-        
-        if ((array[index]+ key) > 90 ){
-            array2[k] = (115) - array[index];
+        if ((array2[k]) > 90 ){
+            for (k = 25; k >= 25 - key; k--){
+            index = k;
+            array2[k] = (155) - array[index];
+            }
         }
-        printf("%c", array[index]);
-        printf("%c \n", array2[k]);
+        printf("%c", array2[k]);
     }
     return 0;
 }
