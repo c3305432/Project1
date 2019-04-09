@@ -12,8 +12,8 @@ int main(){
             new_character = (25 + key) - character
     */
    
-   char array[]= {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-   char array2[26];
+   char array[40] = {"LET'S PARTZ!"};
+   char array2[40];
    int key = 4;
    int index;
    int k;
@@ -22,12 +22,23 @@ int main(){
     
     
     for (index = 0; index < 26 - key; index++){
-        k = index;
-        array2[k] = array[index] + key;
-        
-        printf("%c", array2[k]);
-        }   
-    for (index = 25; index >= 26 - key; index--){
+        if (array[index] < 65 || array[index] > 90){
+            k = index;
+            array2[k] = array[index];
+            printf("%c", array2[k]);
+        } else {
+            if (array[index + key] > 90){
+               k = index;
+               array2[k] = 155 - array[index];
+               printf("%c", array2[k]); 
+            } else {
+            k = index;
+            array2[k] = array[index] + key;
+            printf("%c", array2[k]);
+        }
+    }
+}
+    for (index = 25; index >= (26 - key); index--){
         k = index;
         array2[k] = 155 - array[index];
         
