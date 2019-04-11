@@ -20,10 +20,10 @@ int main(){
     
     switch  (choice){ //
         case 1:
-            rotationEncrypt();
+            rotationEncrypt(); // Calls the function rotationEncrypt to encrypt the message
             break;
         case 2:
-            rotationDecrypt();
+            rotationDecrypt(); // Calls the function rotationDecrypt to decrypt the message
             break;
         case 3:
             printf("Currently Under Development\n");
@@ -38,7 +38,7 @@ int main(){
             printf("Currently Under Development\n");
             break;
         default:
-            printf("Feature not found\n");
+            printf("Feature not found\n"); // Prints a message if number is outside of the range of 1 - 6
     }
   
     
@@ -47,7 +47,7 @@ int main(){
 }
 
 char rotationEncrypt(){
-    char array[1024] = {"RYAN MISTELBAUER\n"};
+    char array[1024] = {"RYAN MISTELBAUER\n"}; // Character array holding the message that is ready to be encrypted
     char array2[1024];
     int key = 4;
     int index;
