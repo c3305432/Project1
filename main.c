@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
     
@@ -12,7 +13,7 @@ int main(){
             new_character = (25 + key) - character
     */
    
-   char array[40] = {"LET'S PARTZ!"};
+   char array[40] = {"RYAN MISTELBAUER"};
    char array2[40];
    int key = 4;
    int index;
@@ -26,8 +27,7 @@ int main(){
             k = index;
             array2[k] = array[index];
             printf("%c", array2[k]);
-        } else {
-            if (array[index + key] > 90){
+            } else if (array[index] + key > 90){
                k = index;
                array2[k] = 155 - array[index];
                printf("%c", array2[k]); 
@@ -37,7 +37,7 @@ int main(){
             printf("%c", array2[k]);
         }
     }
-}
+
     for (index = 25; index >= (26 - key); index--){
         k = index;
         array2[k] = 155 - array[index];
