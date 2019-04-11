@@ -12,14 +12,30 @@ int main(){
     printf("(4) Substitution Decryption\n");
     printf("(5) Rotation Decryption without a key\n");
     printf("(6) Substitution Decryption without a key\n");
-    printf("Please enter your choice number>");
+    printf("Please enter your choice number> ");
     scanf("%d", &choice);
     
-    switch(choice){
+    switch  (choice){
         case 1:
-        rotationEncrypt();
+            rotationEncrypt();
+            break;
+        case 2:
+            printf("Currently Under Development\n");
+            break;
+        case 3:
+            printf("Currently Under Development\n");
+            break;
+        case 4:
+            printf("Currently Under Development\n");
+            break;
+        case 5:
+            printf("Currently Under Development\n");
+            break;
+        case 6:
+            printf("Currently Under Development\n");
+            break;
         default:
-        printf("Feature not found\n");
+            printf("Feature not found\n");
     }
   
     
@@ -28,8 +44,8 @@ int main(){
 }
 
 char rotationEncrypt(){
-    char array[40] = {"RYAN MISTELBAUER"};
-    char array2[40];
+    char array[1024] = {"LET'S PARTY!\n"};
+    char array2[1024];
     int key = 4;
     int index;
     int k;
