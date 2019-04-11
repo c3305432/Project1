@@ -48,7 +48,7 @@ int main(){
 
 char rotationEncrypt(){
     char array[1024] = {"RYAN MISTELBAUER\n"}; // Character array holding the message that is ready to be encrypted
-    char array2[1024];
+    char array2[1024]; // Array that will hold the encrypted message
     int key = 4;
     int index;
     int k;
