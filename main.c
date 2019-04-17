@@ -47,7 +47,7 @@ int main(){
 }
 
 char rotationEncrypt(){
-    char array[1024] = {"RYAN MISTELBAUER\n"}; // Character array holding the message that is ready to be encrypted
+    char array[1024] = {"Ryan Mistelbauer\n"}; // Character array holding the message that is ready to be encrypted
     char array2[1024]; // Array that will hold the encrypted message
     int key = 4;
     int index;
@@ -55,10 +55,25 @@ char rotationEncrypt(){
     
 
     for (index = 0; index < 1024; index++){
-        if (array[index] < 65 || array[index] > 90){
+        if (array[index] < 65 || array[index] > 122){
             k = index;
             array2[k] = array[index];
             printf("%c", array2[k]);
+            } else if (array[index] > 90 && array[index] < 97) {
+            k = index;
+            array2[k] = array[index];
+            printf("%c", array2[k]);
+            } else if (array[index] >= 97 && array[index] <= 122) {
+            array[index] = array[index] - 32;
+                if (array[index] + key > 90){
+               k = index;
+               array2[k] = 156 - array[index];
+               printf("%c", array2[k]); 
+            } else {
+            k = index;
+            array2[k] = array[index] + key;
+            printf("%c", array2[k]);
+        }
             } else if (array[index] + key > 90){
                k = index;
                array2[k] = 156 - array[index];
@@ -75,7 +90,7 @@ char rotationEncrypt(){
 
 char rotationDecrypt(){
     
-    char array[1024] = {"GIWEV XLI TPIEWIV!!!\n"};
+    char array[1024] = {"vcer qmwxipfeyiv\n"};
     char array2[1024];
     int key = 4;
     int index;
