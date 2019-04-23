@@ -5,6 +5,7 @@ void rotationEncrypt();
 void rotationDecrypt();
 void substituteEncrypt();
 void substituteDecrypt();
+void keylessRotation();
 
 int main(){
     int choice;
@@ -34,7 +35,7 @@ int main(){
             substituteDecrypt();
             break;
         case 5:
-            printf("Currently Under Development\n");
+            keylessRotation();
             break;
         case 6:
             printf("Currently Under Development\n");
@@ -51,7 +52,7 @@ int main(){
 void rotationEncrypt(){
     char array[1024] = {"Ryan Mistelbauer\n"}; // Character array holding the message that is ready to be encrypted
     char array2[1024]; // Array that will hold the encrypted message
-    int key = 4;
+    int key = 6;
     int index;
     int k;
     
@@ -428,4 +429,54 @@ void substituteDecrypt(){
          
     }
 
+}
+
+void keylessRotation(){
+    char array[1024] = {"vcer qmwxipfeyiv\n"};
+    char array2[1024];
+    int key = 1;
+    int choice;
+    int index;
+    int k;
+
+while(key < 26){   
+    for (index = 0; index < 1024; index++){
+        if (array[index] < 65 || array[index] > 122){
+            k = index;
+            array2[k] = array[index];
+            printf("%c", array2[k]);
+            } else if (array[index] > 90 && array[index] < 97) {
+            k = index;
+            array2[k] = array[index];
+            printf("%c", array2[k]);
+            } else if (array[index] >= 97 && array[index] <= 122) {
+            array[index] = array[index] - 32;
+                if (array[index] - key < 65){
+               k = index;
+               array2[k] = array[index] + (26 - key);
+               printf("%c", array2[k]); 
+            } else {
+            k = index;
+            array2[k] = array[index] - key;
+            printf("%c", array2[k]);
+        }
+            } else if (array[index] - key < 65){
+               k = index;
+               array2[k] = array[index] + (26 - key);
+               printf("%c", array2[k]); 
+            } else {
+            k = index;
+            array2[k] = array[index] - key;
+            printf("%c", array2[k]);
+        }
+    
+  }
+  printf("Is this the correct decryption? Press 1 for yes and 0 for no\n");
+  scanf("%d", &choice);
+  if (choice == 0){
+  key++;    
+  } else {
+      key = 26;
+  }
+  }
 }
