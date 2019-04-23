@@ -282,7 +282,7 @@ void substituteEncrypt(){
 }
 
 void substituteDecrypt(){
-     char array[1024] = {"Vxcb YwFlGkZcNgV\n"};
+    char array[1024] = {"czmagrsjwhokybduivflnpqext\n"};
     char array2[1024];
     int index;
     int k;
@@ -333,7 +333,7 @@ void substituteDecrypt(){
                 break;
            case 'I':
            case 'i':
-                array2[k] = 'W';
+                array2[k] = 'Q';
                 printf("%c", array2[k]);
                 break;
            case 'J':
